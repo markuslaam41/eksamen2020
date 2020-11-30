@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <nav class="nav">
+          
+    <ul class="nav__links">
+      <li class="nav__item">
+        <a class="nav__link" href="index.html">Home</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="about_us.html">What is Finder</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="help.html">Help</a>
+      </li>
+     
+        <li class="nav__item">
+          <a class="nav__link" href="signup_login.html">Sign up</a>
+        </li>
+        
+      
+    </ul>
+  </nav>
+
+  <div class = "headerTitle">         
+    <a>
+      <br>
+      Sign up for free now!
+    </a>
+
+  </div>
+  <br/>
+
+  <div class="registerUser">
+    <h3>Sign up:</h3>
+    
+    First name:
+     <br/>
+      <input 
+      type="text" 
+      id="name"  
+      placeholder="First name"/>
+      <br/>
+      <p id="name_error" style="color: red; margin-top: 1px; margin-bottom: 1px;"></p>
+      <br/>
+    Last name:
+    <br/>
+      <input 
+      type="text" 
+      id="lname"  
+      placeholder="Last name"/>
+      <br/>
+      <p id="lName_error" style="color: red; margin-top: 1px; margin-bottom: 1px;"></p>
+      <br/>
+      <form>
+       
+      
+      Phone:
+      <br/>
+        <input 
+        type="text" 
+        id="phone"  
+        placeholder="Number"/>
+        <br/>
+        <p id="phone_error" style="color: red; margin-top: 1px; margin-bottom: 1px;"></p>
+        <br/>
+        <br/>
+    
+     Email: 
+     <br/>
+      <input 
+      type="text" 
+      id="email" 
+      value="" 
+      placeholder="Email"/>
+      <br/>
+      <br/>
+      <p id="email_error" style="color: red; margin-top: 1px; margin-bottom: 1px;"></p>
+
+    Password: 
+     <br/>
+    <input 
+    type="password" 
+    id="password"  
+    placeholder="Password"/>
+    <br/>
+    <br/>
+    <p id="password_error" style="color: red; margin-top: 1px; margin-bottom: 1px;"></p>
+
+    Repeat password: 
+     <br/>
+    <input 
+    type="password" 
+    id="password_repeat"  
+    placeholder="repat password"/>
+    <br/>
+    <br/>
+    <p id="password_error_repeat" style="color: red; margin-top: 1px; margin-bottom: 1px;"></p>
+    
+    Age:
+    <br>
+    <input 
+    type="age" 
+    id= "age"  
+    placeholder="Age"/>
+    <br/>
+    <br/>
+                
+    <p id="age_error" style="color: red; margin-top: 1px; margin-bottom: 1px;"></p>
+    
+   
+    <button type="Sign up" onclick="saveToLocalStorage()" style="cursor: pointer;">Sign up</button>
+  </div>
+    
+
+    <div class= "loginUser">
+        <h3>Already a user?  </h3>
+        
+        <h4>Log in here:</h4>
+        Email: 
+                    <br/>
+                    <input 
+                    type="text"
+                    id="logInEmail" 
+                    placeholder="Email address"> 
+                    <br/>
+                    <br/>
+        Password: 
+                    <br/>
+                    <input 
+                    type="password" 
+                    id="logInPassword" 
+                    placeholder="Your password">
+                    <br/>
+                    <br/>
+        <p 
+        
+        id="logInError"style="color: red; margin-top: 1px; margin-bottom: 1px;" ></p>
+        
+        <button 
+        onclick="loginUser()">Log in</button>
+    </div>
+  
+</body>
+<script src="script.js"></script>
+</html>

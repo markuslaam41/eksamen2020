@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    
+        <nav class="nav">
+          
+          <ul class="nav__links">
+            <li class="nav__item">
+              <a class="nav__link" href="index.html">Home</a>
+            </li>
+           
+            <li class="nav__item">
+                <a class="nav__link" href="account.html">Your account</a>
+              </li>
+
+              <li class="nav__item">
+                <a class="nav__link" href="account.html">Your matches</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="account.html">Swipe</a>
+              </li>
+              <li class="nav__item">
+                <button onclick="logoutUser()"> Log out</button>
+              </li>
+             
+              
+          </ul>
+        </nav>
+      
+        <div class = "headerTitle">         
+          <a>
+            <br>
+            Your account
+          </a>
+      
+        </div>
+        <div class="your_account">
+          <ul>
+           <li>
+            <label>Name:</label> <p id="name_account"></p>
+           </li> 
+           <li>
+            <label>Email:</label><p id="email_account"></p>
+           </li>
+           <li>
+            <label>Password:</label><p id="password_account"></p>
+          </li>
+          <li>
+            <label>Phone:</label><p id="phone_account"></p>
+          </li>
+          <li>
+             
+          <label>Age:</label><p id="age_account"></p>
+          </li>
+         
+
+
+
+          </ul>
+          <button onclick="editInfo()">Edit information</button> 
+
+
+
+
+        </div>
+     
+
+</body>
+
+<script src="script.js"></script>
+</html>
