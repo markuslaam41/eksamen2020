@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/markuslaam41/EKSAMEN-2020-finder_app.git"
+    "url": "git+https://github.com/markuslaam41/eksamen2020"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/markuslaam41/EKSAMEN-2020-finder_app/issues"
+    "url": "https://github.com/markuslaam41/eksamen2020/issues"
   },
-  "homepage": "https://github.com/markuslaam41/EKSAMEN-2020-finder_app#readme",
+  "homepage": "https://github.com/markuslaam41/eksamen2020#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
