@@ -4,7 +4,7 @@ const bodyParser= require('body-parser');
 const mongoose = require('mongoose');
 
 const productRoutes = require('./api/routes/products');
-const orderRoutes = require('./api/routes/orders');
+const matchRoutes = require('./api/routes/matches');
 const userRoutes= require('./api/routes/users');
 
 const { MONGO_URI } = require('./config')
@@ -43,7 +43,7 @@ app.use((req,res,next)=>{
 
 //routes which should handle requests
 app.use('/products', productRoutes);
-app.use('/orders',orderRoutes);
+app.use('/matches',matchRoutes);
 app.use('/user',userRoutes);
 
 app.use((req,res,next)=>{

@@ -1,24 +1,24 @@
 const mongoose = require("mongoose");
 
-const Order = require("../models/order");
+const Match = require("../models/match");
 const Product = require("../models/product");
 
 
-exports.orders_get_all =(req, res, next) => {
-    Order.find()
+exports.matches_get_all =(req, res, next) => {
+    Match.find()
       .select("product quantity _id")
       .exec()
       .then(docs => {
         res.status(200).json({
           count: docs.length,
-          orders: docs.map(doc => {
+          matches: docs.map(doc => {
             return {
               _id: doc._id,
               product: doc.product,
               quantity: doc.quantity,
               request: {
                 type: "GET",
-                url: "http://localhost:3000/orders/" + doc._id
+                url: "http://localhost:3000/matches/" + doc._id
               }
             };
           })
@@ -31,7 +31,7 @@ exports.orders_get_all =(req, res, next) => {
       });
   }
 
-  exports.orders_create_order = (req, res, next) => {
+  exports.matches_create_match = (req, res, next) => {
     Product.findById(req.body.productId)
       .then(product => {
         if (!product) {
@@ -39,25 +39,25 @@ exports.orders_get_all =(req, res, next) => {
             message: "Product not found"
           });
         }
-        const order = new Order({
+        const match = new Match({
           _id: mongoose.Types.ObjectId(),
           quantity: req.body.quantity,
           product: req.body.productId
         });
-        return order.save();
+        return match.save();
       })
       .then(result => {
         console.log(result);
         res.status(201).json({
-          message: "Order stored",
-          createdOrder: {
+          message: "Match",
+          createdMatch: {
             _id: result._id,
             product: result.product,
             quantity: result.quantity
           },
           request: {
             type: "GET",
-            url: "http://localhost:3000/orders/" + result._id
+            url: "http://localhost:3000/matches/" + result._id
           }
         });
       })
@@ -69,20 +69,20 @@ exports.orders_get_all =(req, res, next) => {
       });
   }
   
-  exports.orders_get_order = (req, res, next) => {
-    Order.findById(req.params.orderId)
+  exports.matches_get_match = (req, res, next) => {
+    Match.findById(req.params.matchId)
       .exec()
-      .then(order => {
-        if (!order) {
+      .then(match => {
+        if (!match) {
           return res.status(404).json({
-            message: "Order not found"
+            message: "Match not found"
           });
         }
         res.status(200).json({
-          order: order,
+          match: match,
           request: {
             type: "GET",
-            url: "http://localhost:3001/orders"
+            url: "http://localhost:3001/matches"
           }
         });
       })
@@ -93,15 +93,15 @@ exports.orders_get_all =(req, res, next) => {
       });
   }
   
-  exports.delete_order = (req, res, next) => {
-    Order.remove({ _id: req.params.orderId })
+  exports.delete_match = (req, res, next) => {
+    Match.remove({ _id: req.params.matchId })
       .exec()
       .then(result => {
         res.status(200).json({
-          message: "Order deleted",
+          message: "Match deleted",
           request: {
             type: "POST",
-            url: "http://localhost:3001/orders",
+            url: "http://localhost:3001/matches",
             body: { productId: "ID", quantity: "Number" }
           }
         });
